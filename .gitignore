@@ -1,0 +1,12 @@
+node_modules/
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.md
+!README.md
+mobile/.expo/
+mobile-secured/.expo/
+mobile-secured/SETUP.md
+*.db
+*.log
