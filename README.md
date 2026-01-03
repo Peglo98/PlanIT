@@ -1,6 +1,6 @@
-# PlanItSecure - Secure Task Management App
+# PlanItSecure - Bezpieczna Aplikacja do Zarządzania Zadaniami
 
-A mobile task management application built with React Native (Expo) and Flask, demonstrating OWASP Mobile Top 10 security best practices.
+Mobilna aplikacja do zarządzania zadaniami zbudowana przy użyciu React Native (Expo) i Flask, demonstrująca najlepsze praktyki bezpieczeństwa OWASP Mobile Top 10.
 
 ## ⚠️ Dwie wersje projektu
 
@@ -11,29 +11,29 @@ Projekt zawiera **dwie wersje** aplikacji:
 
 Zobacz [VERSION_SWITCH_GUIDE.md](VERSION_SWITCH_GUIDE.md) aby dowiedzieć się jak przełączać między wersjami.
 
-## Features
+## Funkcjonalności
 
-- ✅ User registration and authentication (JWT w wersji secure)
-- ✅ Task management (CRUD operations)
-- ✅ Calendar/Events management
-- ✅ Secure data storage (w wersji secure)
-- ✅ Modern, responsive UI
+- ✅ Rejestracja i uwierzytelnianie użytkowników (JWT w wersji secure)
+- ✅ Zarządzanie zadaniami (operacje CRUD)
+- ✅ Zarządzanie kalendarzem/wydarzeniami
+- ✅ Bezpieczne przechowywanie danych (w wersji secure)
+- ✅ Nowoczesny, responsywny interfejs użytkownika
 
-## Security Features (Wersja Secure)
+## Funkcje Bezpieczeństwa (Wersja Secure)
 
-All OWASP Mobile Top 10 vulnerabilities have been identified and fixed:
+Wszystkie podatności z listy OWASP Mobile Top 10 zostały zidentyfikowane i naprawione:
 
-1. **M1: Improper Credential Usage** - No hardcoded secrets, environment variables
-2. **M3: Insecure Authentication** - JWT tokens, server-side authorization
-3. **M4: Input Validation** - Parameterized queries, input sanitization
-4. **M5: Insecure Communication** - HTTPS-ready configuration
-5. **M8: Security Misconfiguration** - Debug mode disabled, generic errors
-6. **M9: Insecure Data Storage** - SecureStore for sensitive data
-7. **M10: Insufficient Cryptography** - bcrypt password hashing
+1. **M1: Niewłaściwe użycie poświadczeń** - Brak zahardkodowanych sekretów, zmienne środowiskowe
+2. **M3: Niebezpieczne uwierzytelnianie** - Tokeny JWT, autoryzacja po stronie serwera
+3. **M4: Walidacja danych wejściowych** - Zapytania parametryzowane, sanityzacja danych
+4. **M5: Niebezpieczna komunikacja** - Konfiguracja gotowa na HTTPS
+5. **M8: Błędna konfiguracja bezpieczeństwa** - Wyłączony tryb debugowania, ogólne komunikaty błędów
+6. **M9: Niebezpieczne przechowywanie danych** - SecureStore dla danych wrażliwych
+7. **M10: Niewystarczająca kryptografia** - Hashowanie haseł bcrypt
 
-See [SECURITY_FIXES.md](SECURITY_FIXES.md) for detailed documentation.
+Zobacz [SECURITY_FIXES.md](SECURITY_FIXES.md) dla szczegółowej dokumentacji.
 
-## Project Structure
+## Struktura Projektu
 
 ```
 .
@@ -58,18 +58,18 @@ See [SECURITY_FIXES.md](SECURITY_FIXES.md) for detailed documentation.
 │   │   ├── services/        (authService z SecureStore)
 │   │   └── screens/
 │   └── package.json
-├── tests/                   # Security exploit tests
+├── tests/                   # Testy eksploatacyjne bezpieczeństwa
 ├── VULNERABILITY_GUIDE.md   # Dokumentacja podatności
 ├── SECURITY_FIXES.md        # Dokumentacja poprawek
 ├── VERSION_SWITCH_GUIDE.md  # Przewodnik przełączania wersji
-└── BEST_PRACTICES.md         # Best practices
+└── BEST_PRACTICES.md         # Najlepsze praktyki
 ```
 
-## Quick Start
+## Szybki Start
 
-### Backend Setup (Wersja Secure)
+### Konfiguracja Backend (Wersja Secure)
 
-1. Navigate to backend directory:
+1. Przejdź do katalogu backend:
 ```bash
 cd backend
 ```
@@ -80,36 +80,36 @@ copy secure\app.py app.py
 copy secure\requirements.txt requirements.txt
 ```
 
-3. Create virtual environment:
+3. Stwórz wirtualne środowisko:
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate  # Na Windows: venv\Scripts\activate
 ```
 
-4. Install dependencies:
+4. Zainstaluj zależności:
 ```bash
 pip install -r requirements.txt
 ```
 
-5. Set up environment variables:
+5. Skonfiguruj zmienne środowiskowe:
 ```bash
 copy .env.example .env
-# Edit .env and set your secrets
+# Edytuj .env i ustaw swoje sekrety
 ```
 
-6. Initialize database:
+6. Zainicjuj bazę danych:
 ```bash
 python init_db.py
 ```
 
-7. Run server:
+7. Uruchom serwer:
 ```bash
 python app.py
 ```
 
-### Backend Setup (Wersja Vulnerable)
+### Konfiguracja Backend (Wersja Vulnerable)
 
-1. Navigate to backend directory:
+1. Przejdź do katalogu backend:
 ```bash
 cd backend
 ```
@@ -120,63 +120,63 @@ copy vulnerable\app.py app.py
 copy vulnerable\requirements.txt requirements.txt
 ```
 
-3. Install dependencies:
+3. Zainstaluj zależności:
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Run server:
+4. Uruchom serwer:
 ```bash
 python app.py
 ```
 
-### Mobile App Setup (Wersja Podatna)
+### Konfiguracja Aplikacji Mobilnej (Wersja Podatna)
 
 ```bash
 cd mobile
 npm install
 npm start
-# Then press 'a' for Android or 'i' for iOS
+# Następnie naciśnij 'a' dla Androida lub 'i' dla iOS
 ```
 
-### Mobile App Setup (Wersja Zabezpieczona)
+### Konfiguracja Aplikacji Mobilnej (Wersja Zabezpieczona)
 
 ```bash
 cd mobile-secured
 npm install
 npm start
-# Then press 'a' for Android or 'i' for iOS
+# Następnie naciśnij 'a' dla Androida lub 'i' dla iOS
 ```
 
-## Testing
+## Testowanie
 
-### Security Tests
+### Testy Bezpieczeństwa
 
-Run exploit tests to verify vulnerabilities:
+Uruchom testy eksploatacyjne, aby zweryfikować podatności:
 ```bash
 cd backend
 python ../tests/exploit_tests.py
 ```
 
-**Expected Results:**
-- **Wersja vulnerable:** Tests should PASS (proving vulnerabilities exist)
-- **Wersja secure:** Tests should FAIL (proving vulnerabilities are fixed)
+**Oczekiwane Wyniki:**
+- **Wersja vulnerable:** Testy powinny ZDAĆ (potwierdzając istnienie podatności)
+- **Wersja secure:** Testy powinny OBLAĆ (potwierdzając naprawienie podatności)
 
-## Documentation
+## Dokumentacja
 
-- [VULNERABILITY_GUIDE.md](VULNERABILITY_GUIDE.md) - Original vulnerabilities and how to exploit them
-- [SECURITY_FIXES.md](SECURITY_FIXES.md) - Detailed documentation of all security fixes
-- [VERSION_SWITCH_GUIDE.md](VERSION_SWITCH_GUIDE.md) - How to switch between versions
-- [BEST_PRACTICES.md](BEST_PRACTICES.md) - Development best practices
-- [ANALIZA_WYMAGAN.md](ANALIZA_WYMAGAN.md) - Requirements analysis (Polish)
+- [VULNERABILITY_GUIDE.md](VULNERABILITY_GUIDE.md) - Oryginalne podatności i jak je wykorzystać
+- [SECURITY_FIXES.md](SECURITY_FIXES.md) - Szczegółowa dokumentacja wszystkich poprawek bezpieczeństwa
+- [VERSION_SWITCH_GUIDE.md](VERSION_SWITCH_GUIDE.md) - Jak przełączać się między wersjami
+- [BEST_PRACTICES.md](BEST_PRACTICES.md) - Najlepsze praktyki programistyczne
+- [ANALIZA_WYMAGAN.md](ANALIZA_WYMAGAN.md) - Analiza wymagań
 
-## Technologies
+## Technologie
 
 - **Frontend:** React Native (Expo), React Navigation
 - **Backend:** Flask, SQLite
-- **Security:** JWT, bcrypt, expo-secure-store (wersja secure)
-- **Testing:** Jest, Python requests
+- **Bezpieczeństwo:** JWT, bcrypt, expo-secure-store (wersja secure)
+- **Testowanie:** Jest, Python requests
 
-## License
+## Licencja
 
-Educational project for security demonstration purposes.
+Projekt edukacyjny w celach demonstracji bezpieczeństwa.
